@@ -16,7 +16,7 @@ const LoginScreen = ({ navigation }) => {
   const handleLoginPress = () => {
     // Perform login logic here using the username and password
     // If login is successful, navigate to the dashboard screen
-    navigation.navigate('Splash', { username });
+    navigation.navigate('Dashboard', { username });
   };
 
   return (
