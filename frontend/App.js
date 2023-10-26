@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from './component/LoginScreen.js';
-import SplashScreen from './component/SplashScreen.js';
+import LoginScreen from './components/LoginScreen.js';
+import SplashScreen from './components/SplashScreen.js';
 import DashboardScreen from "./components/DashboardScreen";
 
 
