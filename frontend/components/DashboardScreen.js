@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
+import CardComponent from './Card';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,8 +11,12 @@ const styles = StyleSheet.create({
   },
   mainContent: {
     flex: 1,
-    alignItems: 'center',
+    // alignItems: 'center',
     justifyContent: 'center',
+    // backgroundColor: 'red',
+    marginTop: 40,
+    display: 'flex',
+    flexDirection: 'row',
   },
   countContainer: {
     alignItems: 'center',
@@ -54,6 +59,11 @@ const styles = StyleSheet.create({
   }
 });
 
+const userObj = {
+  'username': 'reymin8tor',
+  'firstName': 'Rey'
+}
+
 
 export default function DashboardScreen() {
 
@@ -74,16 +84,29 @@ export default function DashboardScreen() {
         </TouchableOpacity>
       </View>
       <View style={{marginLeft: 30}}>
-        <Text style={styles.title}>Hello, User!</Text>
+        <Text style={styles.title}>Hello, {userObj['firstName']}!</Text>
         <Text style={styles.subtitle}>Have a nice day.</Text>
       </View>
       <View style={styles.mainContent}>
-        <View style={styles.countContainer}>
-          <Text>Count: {count}</Text>
-        </View>
-        <TouchableOpacity style={styles.button} onPress={addOne}>
+
+        <CardComponent cardObj={
+          {
+            title: "Card 1",
+            subtitle: "Reading",
+            content: "Template 1"
+          }
+        }></CardComponent>
+        
+        <CardComponent cardObj={
+          {
+            title: "Card 2",
+            subtitle: "LeetCode",
+            content: "Template 2"
+          }
+        }></CardComponent>
+        {/* <TouchableOpacity style={styles.button} onPress={addOne}>
           <Text style={styles.buttonText}>Click Me</Text>
-        </TouchableOpacity> 
+        </TouchableOpacity> */}
       </View>
     </View>
   );

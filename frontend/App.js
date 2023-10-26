@@ -1,4 +1,4 @@
-import DashboardScreen from "./DashboardScreen";
+import DashboardScreen from "./components/DashboardScreen";
 
 export default function App() {
   return (
