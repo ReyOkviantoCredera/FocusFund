@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: 'transparent',
         width: '40%',
+        height: '25%',
         margin: 10
     }
 });

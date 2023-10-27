@@ -60,18 +60,13 @@ const styles = StyleSheet.create({
   }
 });
 
-const userObj = {
-  'username': 'reymin8tor',
-  'firstName': 'Rey'
-}
 
+export default function EducationScreen({navigation}) {
 
-export default function DashboardScreen({navigation}) {
-
-  const [count, setCount] = useState(0);
-  const addOne = () => {
-    setCount(count + 1);
-  };
+    const [count, setCount] = useState(0);
+    const addOne = () => {
+        setCount(count + 1);
+    };
 
   return (
     <View style={styles.container}>
@@ -85,12 +80,12 @@ export default function DashboardScreen({navigation}) {
         </TouchableOpacity>
       </View>
       <View style={{marginLeft: 30}}>
-        <Text style={styles.title}>Hello, {userObj['firstName']}!</Text>
-        <Text style={styles.subtitle}>Have a nice day.</Text>
+        <Text style={styles.title}>Education</Text>
+        <Text style={styles.subtitle}>Explore, Discover, Learn.</Text>
       </View>
       <View>
-          <Button onPress={() => {navigation.navigate('Education')}}>Go to Education</Button>
-        </View>
+        <Button onPress={() => {navigation.navigate('Dashboard')}}>Go to Home</Button>
+      </View>
       <View style={styles.mainContent}>
 
         <CardComponent cardObj={
@@ -101,20 +96,9 @@ export default function DashboardScreen({navigation}) {
           }
         }></CardComponent>
         
-        <CardComponent cardObj={
-          {
-            title: "Card 2",
-            subtitle: "LeetCode",
-            content: "Template 2"
-          }
-        }></CardComponent>
-
-        {/* <TouchableOpacity style={styles.button} onPress={addOne}>
-          <Text style={styles.buttonText}>Click Me</Text>
-        </TouchableOpacity> */}
-    
+       
+        
       </View>
-      
     </View>
   );
 };
