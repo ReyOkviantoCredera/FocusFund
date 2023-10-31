@@ -22,8 +22,8 @@ const Navbar = () => {
             <Ionicons name="notifications" size={24} color="black" />
           </TouchableOpacity> */}
             <TouchableOpacity onPress={() => handleIconPress('Education')}>
-            <Ionicons name="person" size={24} color="black" />
-          </TouchableOpacity>
+                <Ionicons name="book-outline" size={24} color="black" />
+            </TouchableOpacity>
         </View>
     );
 };
