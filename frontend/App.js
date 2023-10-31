@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './components/LoginScreen.js';
 import SplashScreen from './components/SplashScreen.js';
@@ -12,9 +12,7 @@ import Navbar from './components/Navbar.js';
 
 const Stack = createStackNavigator();
 
-
 export default function App() {
-  
   return (
     <NavigationContainer>
       <Stack.Navigator 
@@ -32,5 +30,4 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
 
