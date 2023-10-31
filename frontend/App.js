@@ -7,6 +7,7 @@ import LoginScreen from './components/LoginScreen.js';
 import SplashScreen from './components/SplashScreen.js';
 import DashboardScreen from "./components/DashboardScreen";
 import EducationScreen from './components/EducationScreen.js';
+import Navbar from './components/Navbar.js';
 
 
 const Stack = createStackNavigator();
@@ -16,7 +17,8 @@ export default function App() {
   
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home" 
+      <Stack.Navigator 
+      initialRouteName="Home" 
       screenOptions={{
         headerShown: false,
       }}
@@ -26,6 +28,7 @@ export default function App() {
         <Stack.Screen name="Dashboard" component={DashboardScreen} />
         <Stack.Screen name="Education" component={EducationScreen} />
       </Stack.Navigator>
+      <Navbar/>
     </NavigationContainer>
   );
 }

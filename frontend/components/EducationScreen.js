@@ -2,7 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
-import CardComponent from './Card';
+import MainContentCardComponent from './MainCard';
+import SubContentCardComponent from './SubcontentCard';
 import { Button } from 'react-native-paper';
 
 const styles = StyleSheet.create({
@@ -18,6 +19,15 @@ const styles = StyleSheet.create({
     marginTop: 40,
     display: 'flex',
     flexDirection: 'row',
+  },
+  subContent: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    // backgroundColor: 'blue',
+    marginTop: 20,
+    display: 'flex',
+    flexDirection: 'column',
   },
   countContainer: {
     alignItems: 'center',
@@ -70,35 +80,49 @@ export default function EducationScreen({navigation}) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.iconAlign}>
-        <TouchableOpacity style={{flex: 1}} onPress={addOne}>
-          <Ionicons name="menu-outline" size={50} style={styles.icon}/>
-        </TouchableOpacity>
+        <View style={styles.iconAlign}>
+            <TouchableOpacity style={{flex: 1}} onPress={addOne}>
+                <Ionicons name="menu-outline" size={50} style={styles.icon}/>
+            </TouchableOpacity>
         
-        <TouchableOpacity onPress={addOne}>
-          <MaterialIcons name="account-circle" size={50} style={styles.icon}/>
-        </TouchableOpacity>
-      </View>
-      <View style={{marginLeft: 30}}>
-        <Text style={styles.title}>Education</Text>
-        <Text style={styles.subtitle}>Explore, Discover, Learn.</Text>
-      </View>
-      <View>
-        <Button onPress={() => {navigation.navigate('Dashboard')}}>Go to Home</Button>
-      </View>
-      <View style={styles.mainContent}>
+            <TouchableOpacity onPress={addOne}>
+                <MaterialIcons name="account-circle" size={50} style={styles.icon}/>
+            </TouchableOpacity>
+        </View>
+        <View style={{marginLeft: 30}}>
+            <Text style={styles.title}>Education</Text>
+            <Text style={styles.subtitle}>Explore, Discover, Learn.</Text>
+        </View>
+        <View style={styles.mainContent}>
 
-        <CardComponent cardObj={
-          {
-            title: "Card 1",
-            subtitle: "Reading",
-            content: "Template 1"
-          }
-        }></CardComponent>
+            <MainContentCardComponent cardObj={
+                {
+                title: "Card 1",
+                subtitle: "Reading",
+                content: "Template 1"
+                }
+            }></MainContentCardComponent>
         
-       
-        
-      </View>
+        </View>
+        <View style={styles.subContent}>
+
+            <SubContentCardComponent cardObj={
+                {
+                title: "Code Quality",
+                subtitle: "30 minutes",
+                content: "Template 2"
+                }
+            }></SubContentCardComponent>
+            <SubContentCardComponent cardObj={
+                {
+                title: "Backlog Grooming Tips",
+                subtitle: "20 minutes",
+                content: "Template 2"
+                }
+            }></SubContentCardComponent>
+
+        </View>
+
     </View>
   );
 };

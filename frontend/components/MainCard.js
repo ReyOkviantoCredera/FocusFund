@@ -27,7 +27,7 @@ function IconSelection(obj){
     return selectedIcon;
 }
 
-export default function CardComponent({cardObj}) {
+export default function MainContentCardComponent({cardObj}) {
 
     let leftIcon = IconSelection(cardObj);
 
