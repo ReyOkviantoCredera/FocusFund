@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: 'transparent',
         width: '40%',
+        height: '25%',
         margin: 10
     }
 });
@@ -26,7 +27,7 @@ function IconSelection(obj){
     return selectedIcon;
 }
 
-export default function CardComponent({cardObj}) {
+export default function MainContentCardComponent({cardObj}) {
 
     let leftIcon = IconSelection(cardObj);
 

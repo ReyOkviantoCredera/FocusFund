@@ -12,7 +12,7 @@ const Navbar = () => {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => handleIconPress('Splash')}>
+            <TouchableOpacity onPress={() => handleIconPress('Dashboard')}>
                 <Ionicons name="home" size={24} style={styles.button} />
             </TouchableOpacity>
             {/* <TouchableOpacity onPress={() => handleIconPress('CodingMini')}>
@@ -21,9 +21,9 @@ const Navbar = () => {
             {/* <TouchableOpacity onPress={() => handleIconPress('GeneralMini')}>
             <Ionicons name="notifications" size={24} color="black" />
           </TouchableOpacity> */}
-            {/* <TouchableOpacity onPress={() => handleIconPress('Education')}>
-            <Ionicons name="person" size={24} color="black" />
-          </TouchableOpacity> */}
+            <TouchableOpacity onPress={() => handleIconPress('Education')}>
+                <Ionicons name="book-outline" size={24} color="black" />
+            </TouchableOpacity>
         </View>
     );
 };
@@ -42,5 +42,6 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
     },
 });
+
 
 export default Navbar;

@@ -2,7 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { MaterialIcons, Ionicons } from '@expo/vector-icons';
-import CardComponent from './Card';
+import MainContentCardComponent from './MainCard';
+import { Button } from 'react-native-paper';
 
 const styles = StyleSheet.create({
   container: {
@@ -65,7 +66,7 @@ const userObj = {
 }
 
 
-export default function DashboardScreen() {
+export default function DashboardScreen({navigation}) {
 
   const [count, setCount] = useState(0);
   const addOne = () => {
@@ -89,25 +90,28 @@ export default function DashboardScreen() {
       </View>
       <View style={styles.mainContent}>
 
-        <CardComponent cardObj={
+        <MainContentCardComponent cardObj={
           {
             title: "Card 1",
             subtitle: "Reading",
             content: "Template 1"
           }
-        }></CardComponent>
+        }></MainContentCardComponent>
         
-        <CardComponent cardObj={
+        <MainContentCardComponent cardObj={
           {
             title: "Card 2",
             subtitle: "LeetCode",
             content: "Template 2"
           }
-        }></CardComponent>
+        }></MainContentCardComponent>
+
         {/* <TouchableOpacity style={styles.button} onPress={addOne}>
           <Text style={styles.buttonText}>Click Me</Text>
         </TouchableOpacity> */}
+    
       </View>
+      
     </View>
   );
 };
